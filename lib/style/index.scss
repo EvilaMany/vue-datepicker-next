@@ -212,6 +212,17 @@
       color: $disabled-color;
       background-color: $disabled-background-color;
     }
+    &.disabled.active {
+      cursor: not-allowed;
+      color: mix($disabled-color, $calendar-active-color);
+      background-color: mix($calendar-active-background-color, $disabled-background-color);
+    }
+    &.disabled.in-range,
+    &.disabled.hover-in-range {
+      cursor: not-allowed;
+      color: mix($disabled-color, $calendar-in-range-color);
+      background-color: darken(mix($calendar-in-range-background-color, $disabled-background-color), 4%);
+    }
   }
 }
 

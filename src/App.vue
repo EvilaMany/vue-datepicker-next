@@ -28,7 +28,7 @@ export default defineComponent({
       ],
       value: new Date(),
       append: false,
-      rangeValue: [new Date(2019, 9, 4, 8, 30, 0), new Date(2019, 9, 4, 18, 30, 0)],
+      rangeValue: [new Date(new Date().getTime() - 86400 * 1000 * 3), new Date(new Date().getTime() - 86400 * 1000)],
       formatter: {
         stringify(date: Date) {
           return format(date, 'DD/MMM/YYYY');
@@ -42,6 +42,18 @@ export default defineComponent({
       },
     };
   },
+  computed: {
+    today() {
+      let date = new Date()
+
+      date.setHours(0)
+      date.setMinutes(0)
+      date.setSeconds(0)
+      // date.setMilliseconds(0)
+
+      return date
+    }
+  },
   methods: {
     handleChange() {
       console.log('change');
@@ -50,9 +62,8 @@ export default defineComponent({
       this.value = val;
     },
   },
-});
+})
 </script>
-
 <template>
   <div>
     <button @click="append = !append">ass</button>
@@ -70,6 +81,7 @@ export default defineComponent({
       v-model:value="rangeValue"
       :append-to-body="false"
       range
+      :disabled-date="(date) => date < today"
       :shortcuts="shortcuts"
       :editable="false"
     ></DatePicker>

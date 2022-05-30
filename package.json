@@ -1,7 +1,7 @@
 {
-  "name": "vue-datepicker-next",
-  "version": "1.0.2",
-  "description": "A Datepicker Component For Vue3",
+  "name": "vue-datepicker-next2",
+  "version": "1.0.3",
+  "description": "A Datepicker Component For Vue3 (fork with fixes)",
   "main": "./index.js",
   "module": "./index.es.js",
   "unpkg": "./index.js",
@@ -40,7 +40,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mengxiong10/vue-datepicker-next.git"
+    "url": "git+https://github.com/evilamany/vue-datepicker-next.git"
   },
   "keywords": [
     "vue",

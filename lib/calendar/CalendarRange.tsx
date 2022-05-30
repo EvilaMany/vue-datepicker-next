@@ -120,10 +120,11 @@ function CalendarRange(originalProps: CalendarRangeProps) {
       ? props.getClasses(cellDate, currentDates, classnames)
       : [];
     const classes: string[] = Array.isArray(outerClasses) ? outerClasses : [outerClasses];
-    if (/disabled|active/.test(classnames)) return classes;
     if (currentDates.length === 2 && inRange(cellDate, currentDates as DateRange)) {
       classes.push('in-range');
     }
+    if (/disabled|active/.test(classnames)) return classes;
+
     if (
       currentDates.length === 1 &&
       hoveredValue.value &&

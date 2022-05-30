@@ -133,7 +133,8 @@ function Calendar(originalProps: CalendarProps) {
   const getCellClasses = (cellDate: Date, classes: string[] = []) => {
     if (isDisabled(cellDate)) {
       classes.push('disabled');
-    } else if (innerValue.value.some((v) => v.getTime() === cellDate.getTime())) {
+    }
+    if (innerValue.value.some((v) => v.getTime() === cellDate.getTime())) {
       classes.push('active');
     }
     return classes.concat(props.getClasses(cellDate, innerValue.value, classes.join(' ')));
